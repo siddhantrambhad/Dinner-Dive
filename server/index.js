@@ -19,7 +19,7 @@ if (!MONGO_URI) {
 
 console.log("🔗 Connecting to MongoDB...");
 
-// Connect to MongoDB (Removed deprecated options)
+// Connect to MongoDB
 mongoose
   .connect(MONGO_URI)
   .then(() => console.log("✅ MongoDB Connected"))
@@ -33,9 +33,14 @@ app.get("/", (req, res) => {
   res.send("🚀 Food Delivery API is Running...");
 });
 
+// Routes
+const authRoutes = require("./routes/auth");
+app.use("/auth", authRoutes);
+
+// NEW: Restaurant routes
+const restaurantRoutes = require("./routes/restaurants");
+app.use("/restaurants", restaurantRoutes);
+
 // Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
-
-const authRoutes = require("./routes/auth");
-app.use("/auth", authRoutes);
