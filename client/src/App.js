@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-
+import Chatbot from "./Chatbot";
 const containerStyle = { width: "100%", height: "400px" };
 const center = { lat: 28.7041, lng: 77.1025 };  // Example location
 
@@ -30,6 +30,6 @@ const App = () => {
 export default App;
 
 
-import Chatbot from "./Chatbot";
+
 
 <Chatbot />
