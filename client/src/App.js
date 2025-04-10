@@ -2,6 +2,18 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import Chatbot from "./Chatbot";
+import React from 'react';
+import Map from './components/Map'; // Adjust path as needed
+function App() {
+  return (
+    <div>
+      <h1>Dinner Dive Map</h1>
+      <Map />
+    </div>
+  );
+}
+
+
 const containerStyle = { width: "100%", height: "400px" };
 const center = { lat: 28.7041, lng: 77.1025 };  // Example location
 
